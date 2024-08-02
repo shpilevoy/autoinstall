@@ -1,0 +1,23 @@
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    hostname: xubuntu
+    username: user
+    password: "$5$qnIxTtOSulgSAKD.$FFGGCkQwO1ZUVXwERx1zcjRTicnTlKgeE4AbNnn3x6A" # docker run -it alpine mkpasswd --method=SHA-512
+  keyboard:
+    layout: us
+    variant: ''
+  locale: en_US
+  ssh:
+    install-server: yes
+    allow-pw: no
+    authorized-keys: []
+  storage:
+    layout:
+      name: lvm
+      match:
+        size: 300000000000
+  user-data:
+    disable_root: true
+    ssh_pwauth: false
